@@ -1,17 +1,32 @@
+# ===========================================
+# 密钥 & 敏感配置（绝对不能提交！）
+# ===========================================
+.env
+*.key
+secrets.yaml
+credentials.json
+*-secret*
+
 # Python
 __pycache__/
 *.py[cod]
 *.egg-info/
+*.egg
+dist/
+build/
+.venv/
+venv/
 
 # IDE
 .vscode/
 .idea/
+*.swp
+*.swo
 
 # OS
 .DS_Store
 Thumbs.db
 
-# 密钥文件（绝对不能提交）
-.env
-*.key
-secrets.yaml
+# Test artifacts
+.pytest_cache/
+*.log
