@@ -1,0 +1,41 @@
+# 饮食规则引擎：口味 → 菜系 → 品类映射
+
+rules:
+  spicy:
+    cuisines: [川菜, 湘菜, 泰式, 韩式, 印度菜]
+    exclude: [清淡粤菜, 日料刺身]
+
+  sour:
+    cuisines: [泰式, 越南菜, 贵州菜, 云南菜, 韩式]
+    notes: "酸辣组合最开胃，适合夏天没胃口"
+
+  light:
+    cuisines: [粤菜, 日料, 轻食沙拉, 越南菜, 潮汕菜]
+    exclude: [川菜, 湘菜, 东北菜, 烧烤]
+
+  heavy:
+    cuisines: [川菜, 湘菜, 东北菜, 烧烤, 新疆菜]
+    notes: "下午可能犯困，慎选"
+
+  soup:
+    cuisines: [粤菜炖汤, 日式拉面, 越南Pho, 云南米线, 江西瓦罐汤]
+    notes: "外卖汤面易坨，堂食优先"
+
+  noodle:
+    keywords: [拉面, 拌面, 凉面, 意面, 米线, 河粉]
+    notes: "夏天凉面优先，冬天汤面优先"
+
+  rice:
+    keywords: [盖浇饭, 煲仔饭, 炒饭, 咖喱饭, 丼, 拌饭, 黄焖鸡]
+
+  low_carb:
+    keywords: [沙拉, 波奇饭, 牛排, 烤鸡胸, 海鲜, 豆腐, 鸡蛋]
+    notes: "下午需要高强度脑力劳动时优先推荐"
+
+conflicts:
+  - condition: "spicy AND oily AND afternoon_focus"
+    resolution: "推荐泰式酸辣（轻油）或韩式泡菜（发酵酸辣），避免红油类"
+  - condition: "noodle AND delivery AND hot_weather"
+    resolution: "优先凉面/拌面，避免汤面"
+  - condition: "budget < 20 AND min_rating > 4.5"
+    resolution: "优先大众点评高分小吃店，告知用户预算与评分的trade-off"

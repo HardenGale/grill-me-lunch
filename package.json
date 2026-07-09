@@ -1,0 +1,29 @@
+{
+  "name": "grill-me-lunch",
+  "version": "0.1.0",
+  "description": "用 grill-me 决策树逻辑帮你决定今天午饭吃什么，接入美团和大众点评",
+  "main": "scripts/grill-lunch.sh",
+  "bin": {
+    "grill-me-lunch": "./scripts/grill-lunch.sh"
+  },
+  "files": [
+    "SKILL.md",
+    "scripts/",
+    "config/"
+  ],
+  "keywords": [
+    "claude-code",
+    "skill",
+    "lunch",
+    "food",
+    "meituan",
+    "dianping",
+    "grill-me"
+  ],
+  "author": "HardenGale",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HardenGale/grill-me-lunch.git"
+  }
+}

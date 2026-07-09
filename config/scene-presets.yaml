@@ -1,0 +1,49 @@
+# 场景预设：不同午饭场景的参数配置
+
+scenes:
+  boss:
+    description: "老板请客，难得有人买单"
+    budget: { min: 80, max: 999 }
+    min_rating: 4.5
+    priority: [rating, atmosphere, signature_dishes]
+    atmosphere_required: true
+    tagline: "推好的，难得有人请"
+
+  broke:
+    description: "月底吃土，极限省钱"
+    budget: { min: 8, max: 15 }
+    min_rating: 3.5
+    priority: [price, portion, value]
+    max_delivery_fee: 0
+    tagline: "吃饱就行，不下馆子"
+
+  diet:
+    description: "减肥中，控制热量"
+    max_calories: 500
+    min_protein: 20
+    priority: [calories, protein, fiber]
+    exclude: [fried, heavy_oil, high_carb, sugary_drinks]
+    tagline: "低卡也可以很好吃"
+
+  date:
+    description: "约会，氛围第一"
+    min_rating: 4.3
+    priority: [atmosphere, rating, privacy]
+    atmosphere_required: true
+    avoid: [messy_eating, strong_smell, too_cheap, too_casual]
+    tagline: "氛围好 + 避坑贴士"
+
+  solo:
+    description: "一个人吃，自在最重要"
+    priority: [speed, value, solo_friendly]
+    prefer: [counter_seat, bar, fast_casual]
+    avoid: [hotpot, BBQ, family_style]
+    tagline: "适合独食的店，不尴尬"
+
+  team:
+    description: "团建聚餐，众口难调"
+    budget: { min: 40, max: 80 }
+    min_party_size: 4
+    priority: [variety, private_room, rating]
+    require: [diverse_menu, large_table, reservation_available]
+    tagline: "品类多，总有一款适合"
